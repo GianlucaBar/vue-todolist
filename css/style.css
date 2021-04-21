@@ -54,11 +54,15 @@ img{
     float: right;
 }
 
-.delete, .check{
+.delete, .doneToggle{
     display: inline-block;
     padding-left: 20px;
 }
 
-.checked{
+.done{
     background-color: lightgreen;
+}
+
+.checkbox-filter{
+    padding-top: 30px;
 }

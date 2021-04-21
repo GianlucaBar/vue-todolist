@@ -9,19 +9,19 @@ var app = new Vue(
 				{
 					text: 'Fare la spesa',
 					visible: true,
-					checked: false
+					done: false
 				},
 
 				{
 					text: 'Fare il Bucato',
 					visible: true,
-					checked: false
+					done: false
 				},
 
 				{
 					text: 'Fare i compiti',
 					visible: true,
-					checked: false
+					done: false
 				}, 
 		   	]
 
@@ -33,7 +33,7 @@ var app = new Vue(
 					this.todos.push({
 						text: this.newUserTodo,
 						visible: true,
-						checked: false
+						done: false
 					});
 					this.newUserTodo = '';
 			}
@@ -55,7 +55,17 @@ var app = new Vue(
 			},
 
 			checkThisTodo(todo){
-				todo.checked = !todo.checked;
+				todo.done = !todo.done;
+			},
+
+			filterDoneTask(){
+				this.todos.forEach(todo => {
+					if(todo.done == true){
+						todo.visible = false;
+					} else{
+						todo.visible = true;
+					}
+				});
 			}
 		}
     });

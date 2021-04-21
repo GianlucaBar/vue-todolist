@@ -31,8 +31,16 @@
 
             <!-- filter section  -->
             <div class="filters">
-                <input class="search-bar" type="text" v-model="userSearch" @keyup="filterList">
-                <button class="btn" @click="filterList">Cerca</button>
+                <div class="search-filter">
+                    <input class="search-bar" type="text" v-model="userSearch" @keyup="filterList">
+                    <button class="btn" @click="filterList">Cerca</button>
+                </div>
+
+                <div class="checkbox-filter">
+                    <label for="checked">Mostra solo task da completare</label>
+                    <input type="checkbox" name="" id="checked" @change="filterDoneTask">
+                </div>
+
             </div>
             <!-- end filter section  -->
 
@@ -41,13 +49,13 @@
                 <ul class="todo-list" v-if="todos.length > 0">
                     <li v-for="(todo, index) in todos"
                         v-if="todo.visible" 
-                        :class="{ 'checked': todo.checked }">
+                        :class="{ 'done': todo.done }">
 
                         {{ todo.text }}
 
                         <div class="todo-actions">
 
-                            <div class="check" @click="checkThisTodo(todo)">
+                            <div class="doneToggle" @click="checkThisTodo(todo)">
                                 <i class="fas fa-check"></i>
                             </div>
 
