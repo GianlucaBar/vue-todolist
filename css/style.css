@@ -18,14 +18,15 @@ img{
     margin: auto;
 }
 
-.add-input{
+.add-input,
+.filters{
     text-align: center;
     padding: 30px 0;
 
 }
 
 .todo-input,
-.add{
+.btn{
     padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid #001533;

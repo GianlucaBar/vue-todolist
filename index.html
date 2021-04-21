@@ -25,14 +25,21 @@
             <div class="add-input">
                 <input class="todo-input" type="text" placeholder="Aggiungi Todo"
                 v-model="newUserTodo" @keyup.enter="addNewTodo">
-                <button class="add" @click="addNewTodo">Aggiungi</button>
+                <button class="btn" @click="addNewTodo">Aggiungi</button>
             </div>
             <!-- end input section  -->
 
+            <!-- filter section  -->
+            <div class="filters">
+                <input type="text" v-model="userSearch" @keyup="filterList">
+                <button class="btn" @click="filterList">Cerca</button>
+            </div>
+            <!-- end filter section  -->
+            
             <!-- todo container  -->
             <div class="todo-container">
                 <ul class="todo-list" v-if="todos.length > 0">
-                    <li v-for="(todo, index) in todos">
+                    <li v-for="(todo, index) in todos" v-if="todo.visible">
                         {{ todo.text }}
                         <div class="delete" @click="deleteTodo(index)">
                             <i class="fas fa-times"></i>

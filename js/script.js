@@ -4,17 +4,21 @@ var app = new Vue(
 
         data: {
 			newUserTodo: '',
+			userSearch: '',
            	todos: [
 				{
-					text: 'Fare la spesa'
+					text: 'Fare la spesa',
+					visible: true
 				},
 
 				{
-					text: 'Fare il Bucato'
+					text: 'Fare il Bucato',
+					visible: true
 				},
 
 				{
-					text: 'Fare i compiti'
+					text: 'Fare i compiti',
+					visible: true
 				}, 
 		   	]
 
@@ -33,6 +37,16 @@ var app = new Vue(
 
 			deleteTodo(index){
 				this.todos.splice(index, 1);
+			},
+
+			filterList(){
+				this.todos.forEach(todo => {
+					if(todo.text.toLowerCase().includes(this.userSearch.toLowerCase())){
+						todo.visible = true;
+					} else{
+						todo.visible = false;
+					}
+				});
 			}
 		}
     });
