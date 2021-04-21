@@ -31,7 +31,9 @@ var app = new Vue(
             addNewTodo(){
 				if (this.newUserTodo.length > 0 ){
 					this.todos.push({
-						text: this.newUserTodo
+						text: this.newUserTodo,
+						visible: true,
+						checked: false
 					});
 					this.newUserTodo = '';
 			}
