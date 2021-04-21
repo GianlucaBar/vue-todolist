@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+img{
+    width: 100%;
+}
+.container{
+    width: 70%;
+    margin: auto;
+}
+
+.logo{
+    width: 300px;
+    margin: auto;
+}
+
+.add-input{
+    text-align: center;
+    padding: 30px 0;
+
+}
+
+.todo-input,
+.add{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #001533;
+}
+
+.todo-container{
+    background-color: #F1F4F4;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.todo-list{
+    list-style-type: none;
+}
+
+.todo-list li{
+    border-bottom: 1px solid lightgray;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.delete{
+    display: inline-block;
+    float: right;
+}

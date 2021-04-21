@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+<body>
+    <div id="root">
+        <!-- container  -->
+        <div class="container">
+
+            <!-- logo  -->
+            <div class="logo">
+                <img src="https://www.boolean.careers/images/misc/logo.png" alt="logo">
+            </div>
+            <!-- end logo  -->
+
+            <!-- input section  -->
+            <div class="add-input">
+                <input class="todo-input" type="text" placeholder="Aggiungi Todo"
+                v-model="newUserTodo" @keyup.enter="addNewTodo">
+                <button class="add" @click="addNewTodo">Aggiungi</button>
+            </div>
+            <!-- end input section  -->
+
+            <!-- todo container  -->
+            <div class="todo-container">
+                <ul class="todo-list" v-if="todos.length > 0">
+                    <li v-for="(todo, index) in todos">
+                        {{ todo.text }}
+                        <div class="delete" @click="deleteTodo(index)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div v-else>Nessun todo da mostrare</div>
+            </div>
+            <!-- end todo container  -->
+        </div>
+        <!-- end container -->
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
