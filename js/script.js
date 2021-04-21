@@ -8,17 +8,20 @@ var app = new Vue(
            	todos: [
 				{
 					text: 'Fare la spesa',
-					visible: true
+					visible: true,
+					checked: false
 				},
 
 				{
 					text: 'Fare il Bucato',
-					visible: true
+					visible: true,
+					checked: false
 				},
 
 				{
 					text: 'Fare i compiti',
-					visible: true
+					visible: true,
+					checked: false
 				}, 
 		   	]
 
@@ -47,6 +50,10 @@ var app = new Vue(
 						todo.visible = false;
 					}
 				});
+			},
+
+			checkThisTodo(todo){
+				todo.checked = !todo.checked;
 			}
 		}
     });

@@ -31,18 +31,30 @@
 
             <!-- filter section  -->
             <div class="filters">
-                <input type="text" v-model="userSearch" @keyup="filterList">
+                <input class="search-bar" type="text" v-model="userSearch" @keyup="filterList">
                 <button class="btn" @click="filterList">Cerca</button>
             </div>
             <!-- end filter section  -->
-            
+
             <!-- todo container  -->
             <div class="todo-container">
                 <ul class="todo-list" v-if="todos.length > 0">
-                    <li v-for="(todo, index) in todos" v-if="todo.visible">
+                    <li v-for="(todo, index) in todos"
+                        v-if="todo.visible" 
+                        :class="{ 'checked': todo.checked }">
+                        
                         {{ todo.text }}
-                        <div class="delete" @click="deleteTodo(index)">
-                            <i class="fas fa-times"></i>
+
+                        <div class="todo-actions">
+
+                            <div class="check" @click="checkThisTodo(todo)">
+                                <i class="fas fa-check"></i>
+                            </div>
+
+                            <div class="delete" @click="deleteTodo(index)">
+                                <i class="fas fa-times"></i>
+                            </div>
+
                         </div>
                     </li>
 
