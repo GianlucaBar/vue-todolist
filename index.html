@@ -38,7 +38,7 @@
 
                 <div class="checkbox-filter">
                     <label for="checked">Mostra solo task da completare</label>
-                    <input type="checkbox" name="" id="checked" @change="filterDoneTask">
+                    <input v-model="checked" type="checkbox" name="" id="checked" @change="filterDoneTask">
                 </div>
 
             </div>

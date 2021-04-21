@@ -5,6 +5,7 @@ var app = new Vue(
         data: {
 			newUserTodo: '',
 			userSearch: '',
+			checked: false,
            	todos: [
 				{
 					text: 'Fare la spesa',
@@ -59,13 +60,21 @@ var app = new Vue(
 			},
 
 			filterDoneTask(){
-				this.todos.forEach(todo => {
-					if(todo.done == true){
-						todo.visible = false;
-					} else{
+
+				if(this.checked){
+					this.todos.forEach(todo => {
+						if(todo.done == true){
+							todo.visible = false;
+
+						} else{
+							todo.visible = true;
+						}
+					})
+				} else {
+					this.todos.forEach(todo => {
 						todo.visible = true;
-					}
-				});
+					})
+				}
 			}
 		}
     });
