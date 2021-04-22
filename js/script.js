@@ -47,7 +47,7 @@ var app = new Vue(
 
 			filterList(){
 				this.todos.forEach(todo => {
-					if(todo.text.toLowerCase().includes(this.userSearch.toLowerCase())){
+					if(todo.text.toLowerCase().includes(this.userSearch.toLowerCase()) && todo.visible == true){
 						todo.visible = true;
 					} else{
 						todo.visible = false;
